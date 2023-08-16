@@ -1,12 +1,12 @@
-workspace "GLFW"
-    configurations {"Debug", "Release"}
-
 project "GLFW"
 	kind "StaticLib"
 	language "C"
 
-	targetdir ("./builds/%{cfg.buildcfg}/bin/%{prj.name}")
-	objdir ("./builds/%{cfg.buildcfg}/obj/%{prj.name}")
+	targetdir ("../lib")
+	objdir ("./obj")
+
+	libDirs["GLFW"] = "../lib"
+	incDirs["GLFW"] = "vendor/glfw/include"
 
 	files
 	{
